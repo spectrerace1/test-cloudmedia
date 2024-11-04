@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Branch } from './Branch';
 
 @Entity('devices')
@@ -25,15 +25,19 @@ export class Device {
     };
   };
 
-  @ManyToOne(() => Branch, branch => branch.devices)
-  branch: Branch;
-
-  @Column({ default: true })
+  @Column({ name: 'is_active', default: true })
   isActive: boolean;
 
-  @CreateDateColumn()
+  @ManyToOne(() => Branch, branch => branch.devices)
+  @JoinColumn({ name: 'branch_id' })
+  branch: Branch;
+
+  @Column({ name: 'branch_id' })
+  branchId: string;
+
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 }

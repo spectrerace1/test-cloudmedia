@@ -18,6 +18,10 @@ export class AuthService {
       throw new AppError(400, 'Email already registered');
     }
 
+    // Check if this is the first user - make them admin
+    const userCount = await userRepository.count();
+    const role = userCount === 0 ? 'admin' : 'user';
+
     const hashedPassword = await bcrypt.hash(
       userData.password!,
       config.bcrypt.saltRounds
@@ -25,7 +29,8 @@ export class AuthService {
 
     const user = userRepository.create({
       ...userData,
-      password: hashedPassword
+      password: hashedPassword,
+      role
     });
 
     await userRepository.save(user);
@@ -90,7 +95,7 @@ export class AuthService {
     const sessionId = crypto.randomUUID();
     const sessionData = {
       userId: user.id,
-      userAgent: user.userAgent,
+      role: user.role,
       createdAt: new Date().toISOString()
     };
 
@@ -98,8 +103,7 @@ export class AuthService {
     await redisClient.set(
       `session:${sessionId}`,
       JSON.stringify(sessionData),
-      'EX',
-      86400
+      { EX: 86400 }
     );
 
     // Add to user's session set

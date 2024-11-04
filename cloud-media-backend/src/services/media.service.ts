@@ -42,8 +42,13 @@ export class MediaService {
       { 'Content-Type': file.mimetype }
     );
 
+    // Create readable stream from buffer for audio duration calculation
+    const bufferStream = new Readable();
+    bufferStream.push(file.buffer);
+    bufferStream.push(null);
+
     // Get audio metadata
-    const duration = await getAudioDurationInSeconds(file.buffer);
+    const duration = await getAudioDurationInSeconds(bufferStream);
     
     // Create media record
     const media = mediaRepository.create({

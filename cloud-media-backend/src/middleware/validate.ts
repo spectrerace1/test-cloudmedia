@@ -1,4 +1,4 @@
-<content>import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { AnyZodObject } from 'zod';
 import { AppError } from './errorHandler';
 
@@ -17,4 +17,3 @@ export const validate = (schema: AnyZodObject) => {
     }
   };
 };
-</content>

@@ -1,4 +1,4 @@
-<content>import { z } from 'zod';
+import { z } from 'zod';
 
 const settingsSchema = z.object({
   volume: z.number().min(0).max(100),
@@ -18,4 +18,3 @@ export const createBranchSchema = z.object({
 export const updateBranchSchema = createBranchSchema.partial();
 
 export const updateSettingsSchema = settingsSchema;
-</content>

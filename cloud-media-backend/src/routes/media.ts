@@ -4,6 +4,12 @@ import { MediaService } from '../services/media.service';
 import { authenticate, authorize } from '../middleware/auth';
 import { validate } from '../middleware/validate';
 import { updateMediaSchema } from '../schemas/media.schema';
+import { Request } from 'express';
+
+// Extend Request type to include file from multer
+interface MulterRequest extends Request {
+  file?: Express.Multer.File;
+}
 
 export const mediaRouter = Router();
 const mediaService = new MediaService();
@@ -23,7 +29,7 @@ mediaRouter.post(
   '/upload',
   authorize('admin'),
   upload.single('file'),
-  async (req, res, next) => {
+  async (req: MulterRequest, res, next) => {
     try {
       if (!req.file) {
         throw new Error('No file uploaded');

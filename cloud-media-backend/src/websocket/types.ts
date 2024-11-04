@@ -13,20 +13,14 @@ export interface WebSocketMessage {
   data?: any;
 }
 
-export interface PlaybackStatus {
-  currentTrack: string | null;
-  position: number;
-  isPlaying: boolean;
-  volume: number;
-  playlist: string | null;
-}
-
 export interface DeviceStatus {
   online: boolean;
+  lastSeen: string;
   ip: string;
   version: string;
   systemInfo: {
     os: string;
+    cpu: number;
     memory: {
       total: number;
       used: number;
@@ -35,6 +29,5 @@ export interface DeviceStatus {
       total: number;
       used: number;
     };
-    cpu: number;
   };
 }

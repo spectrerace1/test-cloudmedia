@@ -5,6 +5,15 @@ import { logger } from '../utils/logger';
 import { DeviceStatus } from '../websocket/types';
 import { sendCommand } from '../websocket/handlers/deviceHandler';
 
+interface DeviceMetrics {
+  timestamp: string;
+  cpu: number;
+  memory_total: number;
+  memory_used: number;
+  storage_total: number;
+  storage_used: number;
+}
+
 export class MonitoringService {
   private readonly deviceRepository = AppDataSource.getRepository(Device);
   private readonly HEALTH_CHECK_INTERVAL = 60000; // 1 minute
@@ -90,23 +99,35 @@ export class MonitoringService {
   private async storeMetrics(deviceId: string, status: DeviceStatus | null) {
     if (!status) return;
 
-    const metrics = {
+    const metrics: DeviceMetrics = {
       timestamp: new Date().toISOString(),
-      cpu: status.systemInfo?.cpu || 0,
-      memory: status.systemInfo?.memory || { total: 0, used: 0 },
-      storage: status.systemInfo?.storage || { total: 0, used: 0 }
+      cpu: status.systemInfo.cpu,
+      memory_total: status.systemInfo.memory.total,
+      memory_used: status.systemInfo.memory.used,
+      storage_total: status.systemInfo.storage.total,
+      storage_used: status.systemInfo.storage.used
+    };
+
+    // Convert metrics to Record type for Redis storage
+    const redisMetrics: Record<string, string | number> = {
+      timestamp: metrics.timestamp,
+      cpu: metrics.cpu,
+      memory_total: metrics.memory_total,
+      memory_used: metrics.memory_used,
+      storage_total: metrics.storage_total,
+      storage_used: metrics.storage_used
     };
 
     // Store in Redis with TTL (24 hours)
     const key = `metrics:${deviceId}:${metrics.timestamp}`;
-    await redisClient.hSet(key, metrics);
+    await redisClient.hSet(key, redisMetrics);
     await redisClient.expire(key, 86400);
 
     // Check thresholds and alert if necessary
     await this.checkMetricThresholds(deviceId, metrics);
   }
 
-  private async checkMetricThresholds(deviceId: string, metrics: any) {
+  private async checkMetricThresholds(deviceId: string, metrics: DeviceMetrics) {
     const thresholds = {
       cpu: 80, // 80% CPU usage
       memory: 90, // 90% memory usage
@@ -119,12 +140,12 @@ export class MonitoringService {
       alerts.push(`High CPU usage: ${metrics.cpu}%`);
     }
 
-    const memoryUsage = (metrics.memory.used / metrics.memory.total) * 100;
+    const memoryUsage = (metrics.memory_used / metrics.memory_total) * 100;
     if (memoryUsage > thresholds.memory) {
       alerts.push(`High memory usage: ${memoryUsage.toFixed(1)}%`);
     }
 
-    const storageUsage = (metrics.storage.used / metrics.storage.total) * 100;
+    const storageUsage = (metrics.storage_used / metrics.storage_total) * 100;
     if (storageUsage > thresholds.storage) {
       alerts.push(`High storage usage: ${storageUsage.toFixed(1)}%`);
     }
@@ -171,28 +192,32 @@ export class MonitoringService {
   }
 
   // Public methods for external use
-  async getDeviceMetrics(deviceId: string, period: string = '1h'): Promise<any[]> {
+  async getDeviceMetrics(deviceId: string, period: string = '1h'): Promise<DeviceMetrics[]> {
     const timeRange = this.getTimeRange(period);
-    const metrics = [];
+    const metrics: DeviceMetrics[] = [];
     
-    // Scan Redis for metrics within time range
     let cursor = 0;
     do {
-      const [nextCursor, keys] = await redisClient.scan(
-        cursor,
-        'MATCH',
-        `metrics:${deviceId}:*`,
-        'COUNT',
-        100
-      );
+      const result = await redisClient.scan(cursor, {
+        MATCH: `metrics:${deviceId}:*`,
+        COUNT: 100
+      });
       
-      cursor = parseInt(nextCursor);
+      cursor = result.cursor;
       
-      for (const key of keys) {
+      for (const key of result.keys) {
         const timestamp = key.split(':')[2];
         if (new Date(timestamp) >= timeRange) {
           const metric = await redisClient.hGetAll(key);
-          metrics.push({ timestamp, ...metric });
+          metrics.push({
+            ...metric,
+            timestamp,
+            cpu: Number(metric.cpu),
+            memory_total: Number(metric.memory_total),
+            memory_used: Number(metric.memory_used),
+            storage_total: Number(metric.storage_total),
+            storage_used: Number(metric.storage_used)
+          } as DeviceMetrics);
         }
       }
     } while (cursor !== 0);
@@ -203,6 +228,11 @@ export class MonitoringService {
   async getDeviceAlerts(deviceId: string, limit: number = 100): Promise<any[]> {
     const alerts = await redisClient.lRange(`alerts:${deviceId}`, 0, limit - 1);
     return alerts.map(alert => JSON.parse(alert));
+  }
+
+  async clearAlerts(deviceId: string): Promise<void> {
+    await redisClient.del(`alerts:${deviceId}`);
+    logger.info(`Cleared alerts for device ${deviceId}`);
   }
 
   private getTimeRange(period: string): Date {

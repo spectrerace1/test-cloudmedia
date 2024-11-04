@@ -1,4 +1,4 @@
-<content>import { Router } from 'express';
+import { Router } from 'express';
 import { BranchService } from '../services/branch.service';
 import { authenticate, authorize } from '../middleware/auth';
 import { validate } from '../middleware/validate';
@@ -77,4 +77,3 @@ branchRouter.patch(
     }
   }
 );
-</content>

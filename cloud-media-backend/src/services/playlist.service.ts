@@ -131,7 +131,7 @@ export class PlaylistService {
 
   async removeMedia(id: string, mediaIds: string[]) {
     const playlist = await this.findById(id);
-    playlist.media = playlist.media.filter(m => !mediaIds.includes(m.id));
+    playlist.media = playlist.media.filter((m: Media) => !mediaIds.includes(m.id));
     await playlistRepository.save(playlist);
 
     // Update cache
@@ -166,7 +166,7 @@ export class PlaylistService {
 
   async removeBranches(id: string, branchIds: string[]) {
     const playlist = await this.findById(id);
-    playlist.branches = playlist.branches.filter(b => !branchIds.includes(b.id));
+    playlist.branches = playlist.branches.filter((b: Branch) => !branchIds.includes(b.id));
     await playlistRepository.save(playlist);
 
     // Update caches

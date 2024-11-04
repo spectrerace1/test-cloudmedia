@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 import { z } from 'zod';
 
 dotenv.config();
@@ -8,53 +8,54 @@ const envSchema = z.object({
   PORT: z.string().default('3000'),
   
   // Database
-  DB_HOST: z.string(),
-  DB_PORT: z.string(),
-  DB_USER: z.string(),
-  DB_PASSWORD: z.string(),
-  DB_NAME: z.string(),
+  DB_HOST: z.string().default('localhost'),
+  DB_PORT: z.string().default('5432'),
+  DB_USER: z.string().default('postgres'),
+  DB_PASSWORD: z.string().default('postgres'),
+  DB_NAME: z.string().default('cloud_media'),
   
   // Redis
-  REDIS_URL: z.string(),
+  REDIS_URL: z.string().default('redis://localhost:6379'),
   
   // MinIO
-  MINIO_ENDPOINT: z.string(),
-  MINIO_PORT: z.string(),
-  MINIO_ACCESS_KEY: z.string(),
-  MINIO_SECRET_KEY: z.string(),
-  MINIO_BUCKET: z.string(),
+  MINIO_ENDPOINT: z.string().default('localhost'),
+  MINIO_PORT: z.string().default('9000'),
+  MINIO_ACCESS_KEY: z.string().default('minioadmin'),
+  MINIO_SECRET_KEY: z.string().default('minioadmin'),
+  MINIO_BUCKET: z.string().default('cloud-media'),
   
   // JWT
-  JWT_SECRET: z.string(),
+  JWT_SECRET: z.string().default('your-jwt-secret-key'),
   JWT_EXPIRES_IN: z.string().default('1d'),
+  JWT_REFRESH_SECRET: z.string().default('your-jwt-refresh-secret-key'),
   
   // Bcrypt
   BCRYPT_SALT_ROUNDS: z.string().default('10'),
 
   // Email (Nodemailer)
-  EMAIL_HOST: z.string(),
-  EMAIL_PORT: z.string(),
-  EMAIL_USER: z.string(),
-  EMAIL_PASSWORD: z.string(),
-  EMAIL_FROM: z.string(),
+  EMAIL_HOST: z.string().default('smtp.gmail.com'),
+  EMAIL_PORT: z.string().default('587'),
+  EMAIL_USER: z.string().default('your-email@gmail.com'),
+  EMAIL_PASSWORD: z.string().default('your-app-password'),
+  EMAIL_FROM: z.string().default('your-email@gmail.com'),
   EMAIL_SECURE: z.string().default('true'),
 
   // SendGrid
-  SENDGRID_API_KEY: z.string(),
+  SENDGRID_API_KEY: z.string().default('your-sendgrid-api-key'),
 
   // Twilio
-  TWILIO_ACCOUNT_SID: z.string(),
-  TWILIO_AUTH_TOKEN: z.string(),
-  TWILIO_PHONE_NUMBER: z.string(),
+  TWILIO_ACCOUNT_SID: z.string().default('your-twilio-sid'),
+  TWILIO_AUTH_TOKEN: z.string().default('your-twilio-token'),
+  TWILIO_PHONE_NUMBER: z.string().default('your-twilio-phone'),
 
   // Firebase
-  FIREBASE_PROJECT_ID: z.string(),
-  FIREBASE_CLIENT_EMAIL: z.string(),
-  FIREBASE_PRIVATE_KEY: z.string(),
+  FIREBASE_PROJECT_ID: z.string().default('your-project-id'),
+  FIREBASE_CLIENT_EMAIL: z.string().default('your-client-email'),
+  FIREBASE_PRIVATE_KEY: z.string().default('your-private-key'),
 
   // Default Notification Recipients
-  DEFAULT_NOTIFICATION_EMAIL: z.string(),
-  DEFAULT_NOTIFICATION_PHONE: z.string()
+  DEFAULT_NOTIFICATION_EMAIL: z.string().default('admin@example.com'),
+  DEFAULT_NOTIFICATION_PHONE: z.string().default('+1234567890')
 });
 
 const env = envSchema.parse(process.env);
@@ -86,6 +87,7 @@ export const config = {
   
   jwt: {
     secret: env.JWT_SECRET,
+    refreshSecret: env.JWT_REFRESH_SECRET,
     expiresIn: env.JWT_EXPIRES_IN
   },
   

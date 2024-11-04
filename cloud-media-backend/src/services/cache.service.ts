@@ -38,14 +38,13 @@ export class CacheService {
     try {
       let cursor = 0;
       do {
-        const [nextCursor, keys] = await redisClient.scan(
-          cursor,
-          'MATCH',
-          this.CACHE_PREFIX + pattern,
-          'COUNT',
-          100
-        );
-        cursor = parseInt(nextCursor);
+        const result = await redisClient.scan(cursor, {
+          MATCH: this.CACHE_PREFIX + pattern,
+          COUNT: 100
+        });
+        
+        cursor = result.cursor;
+        const keys = result.keys;
         
         if (keys.length) {
           await redisClient.del(keys);
@@ -152,17 +151,14 @@ export class CacheService {
     let cursor = 0;
     
     do {
-      const [nextCursor, keys] = await redisClient.scan(
-        cursor,
-        'MATCH',
-        `${this.CACHE_PREFIX}metrics:${deviceId}:*`,
-        'COUNT',
-        100
-      );
+      const result = await redisClient.scan(cursor, {
+        MATCH: `${this.CACHE_PREFIX}metrics:${deviceId}:*`,
+        COUNT: 100
+      });
       
-      cursor = parseInt(nextCursor);
+      cursor = result.cursor;
       
-      for (const key of keys) {
+      for (const key of result.keys) {
         const timestamp = key.split(':')[3];
         const time = new Date(timestamp);
         

@@ -24,11 +24,14 @@ export const handleDeviceConnect = async (ws: WebSocket, message: WebSocketMessa
     lastPing: Date.now()
   });
 
-  // Update device status
-  await redisClient.hSet(`device:${deviceId}`, {
+  // Convert status to Redis-compatible format
+  const redisStatus: Record<string, string> = {
     status: 'online',
     lastSeen: new Date().toISOString()
-  });
+  };
+
+  // Update device status
+  await redisClient.hSet(`device:${deviceId}`, redisStatus);
 
   logger.info(`Device connected: ${deviceId}`);
 
@@ -40,10 +43,18 @@ export const handleDeviceStatus = async (message: WebSocketMessage) => {
   const { deviceId, data } = message;
   const status = data as DeviceStatus;
 
-  await redisClient.hSet(`device:${deviceId}`, {
-    ...status,
-    lastSeen: new Date().toISOString()
-  });
+  // Convert status to Redis-compatible format
+  const redisStatus: Record<string, string> = {
+    status: JSON.stringify({
+      online: status.online,
+      ip: status.ip,
+      version: status.version,
+      systemInfo: status.systemInfo,
+      lastSeen: new Date().toISOString()
+    })
+  };
+
+  await redisClient.hSet(`device:${deviceId}`, redisStatus);
 
   logger.debug(`Device status updated: ${deviceId}`, status);
 };
@@ -53,10 +64,15 @@ export const handleDeviceDisconnect = async (deviceId: string) => {
   if (connection) {
     connections.delete(deviceId);
     
-    await redisClient.hSet(`device:${deviceId}`, {
-      status: 'offline',
-      lastSeen: new Date().toISOString()
-    });
+    // Convert status to Redis-compatible format
+    const redisStatus: Record<string, string> = {
+      status: JSON.stringify({
+        online: false,
+        lastSeen: new Date().toISOString()
+      })
+    };
+
+    await redisClient.hSet(`device:${deviceId}`, redisStatus);
 
     logger.info(`Device disconnected: ${deviceId}`);
   }

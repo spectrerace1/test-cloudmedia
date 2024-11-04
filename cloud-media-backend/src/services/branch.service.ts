@@ -1,4 +1,4 @@
-<content>import { AppDataSource } from '../data-source';
+import { AppDataSource } from '../data-source';
 import { Branch } from '../entities/Branch';
 import { AppError } from '../middleware/errorHandler';
 
@@ -52,4 +52,3 @@ export class BranchService {
     return branchRepository.save(branch);
   }
 }
-</content>
