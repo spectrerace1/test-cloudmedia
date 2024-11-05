@@ -46,6 +46,12 @@ export const authorize = (...roles: string[]) => {
       throw new AppError(401, 'Authentication required');
     }
 
+    // Allow admin role to access everything
+    if (req.user.role === 'admin') {
+      return next();
+    }
+
+    // For non-admin users, check if their role is in the allowed roles
     if (!roles.includes(req.user.role)) {
       throw new AppError(403, 'Insufficient permissions');
     }

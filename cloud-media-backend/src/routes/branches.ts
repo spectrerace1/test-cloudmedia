@@ -9,9 +9,10 @@ const branchService = new BranchService();
 
 branchRouter.use(authenticate);
 
+// Allow both admin and user roles to create branches
 branchRouter.post(
   '/',
-  authorize('admin'),
+  authorize('admin', 'user'),
   validate(createBranchSchema),
   async (req, res, next) => {
     try {
@@ -43,7 +44,7 @@ branchRouter.get('/:id', async (req, res, next) => {
 
 branchRouter.patch(
   '/:id',
-  authorize('admin'),
+  authorize('admin', 'user'),
   validate(updateBranchSchema),
   async (req, res, next) => {
     try {
@@ -66,7 +67,7 @@ branchRouter.delete('/:id', authorize('admin'), async (req, res, next) => {
 
 branchRouter.patch(
   '/:id/settings',
-  authorize('admin'),
+  authorize('admin', 'user'),
   validate(updateSettingsSchema),
   async (req, res, next) => {
     try {

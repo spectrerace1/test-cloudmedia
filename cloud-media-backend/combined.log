@@ -101,3 +101,13 @@
 {"level":"info","message":"Redis connection established","timestamp":"2024-11-05T08:26:15.046Z"}
 {"level":"info","message":"MinIO connection established","timestamp":"2024-11-05T08:26:15.064Z"}
 {"level":"info","message":"Server is running on port 3000","timestamp":"2024-11-05T08:26:15.067Z"}
+{"level":"info","message":"Device monitoring started","timestamp":"2024-11-05T09:03:35.879Z"}
+{"level":"info","message":"Database connection established","timestamp":"2024-11-05T09:03:36.663Z"}
+{"level":"info","message":"Redis connection established","timestamp":"2024-11-05T09:03:36.670Z"}
+{"level":"info","message":"MinIO connection established","timestamp":"2024-11-05T09:03:36.687Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2024-11-05T09:03:36.690Z"}
+{"level":"info","message":"Device monitoring started","timestamp":"2024-11-05T09:04:04.175Z"}
+{"level":"info","message":"Database connection established","timestamp":"2024-11-05T09:04:05.169Z"}
+{"level":"info","message":"Redis connection established","timestamp":"2024-11-05T09:04:05.176Z"}
+{"level":"info","message":"MinIO connection established","timestamp":"2024-11-05T09:04:05.193Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2024-11-05T09:04:05.198Z"}
