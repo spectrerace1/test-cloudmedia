@@ -2,40 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hide default scrollbars */
-.hide-scrollbar {
+/* Global scrollbar hiding */
+* {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
 
-/* Custom elegant scrollbar */
-.elegant-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 #f1f5f9;
-}
-
-.elegant-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-
-.elegant-scrollbar::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 8px;
-}
-
-.elegant-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
-  border-radius: 8px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-
-.elegant-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #94a3b8;
+/* Make sure overflow still works */
+html, body {
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Calendar Styles */

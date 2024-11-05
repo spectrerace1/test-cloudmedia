@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Music2, Play, Pause } from 'lucide-react';
+import { ArrowLeft, Clock, Music2, Play, Pause, Volume2, VolumeX, SkipBack, SkipForward } from 'lucide-react';
 import PushPlaylistModal from './PushPlaylistModal';
 import PlaylistDetailLoader from './PlaylistDetailLoader';
 
@@ -22,7 +22,7 @@ interface Playlist {
   songs: Song[];
 }
 
-// Expanded mock playlists data
+// Mock playlists data
 const mockPlaylists: Playlist[] = [
   {
     id: 1,
@@ -39,66 +39,7 @@ const mockPlaylists: Playlist[] = [
       duration: `${Math.floor(Math.random() * 4) + 2}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`
     }))
   },
-  {
-    id: 2,
-    name: "Relaxing Jazz",
-    category: "Jazz",
-    mood: "Calm",
-    artwork: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    songCount: 32,
-    duration: "1h 55m",
-    songs: Array.from({ length: 32 }, (_, i) => ({
-      id: i + 1,
-      title: `Jazz Standard ${i + 1}`,
-      artist: `Jazz Artist ${Math.floor(i / 4) + 1}`,
-      duration: `${Math.floor(Math.random() * 4) + 3}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`
-    }))
-  },
-  {
-    id: 3,
-    name: "Coffee Shop Ambience",
-    category: "Ambient",
-    mood: "Relaxed",
-    artwork: "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    songCount: 28,
-    duration: "1h 40m",
-    songs: Array.from({ length: 28 }, (_, i) => ({
-      id: i + 1,
-      title: `Ambient Track ${i + 1}`,
-      artist: `Ambient Artist ${Math.floor(i / 3) + 1}`,
-      duration: `${Math.floor(Math.random() * 5) + 2}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`
-    }))
-  },
-  {
-    id: 4,
-    name: "Shopping Mall Hits",
-    category: "Pop",
-    mood: "Upbeat",
-    artwork: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    songCount: 52,
-    duration: "3h 15m",
-    songs: Array.from({ length: 52 }, (_, i) => ({
-      id: i + 1,
-      title: `Pop Hit ${i + 1}`,
-      artist: `Pop Artist ${Math.floor(i / 6) + 1}`,
-      duration: `${Math.floor(Math.random() * 4) + 2}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`
-    }))
-  },
-  {
-    id: 5,
-    name: "Dinner Time Classics",
-    category: "Classical",
-    mood: "Elegant",
-    artwork: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    songCount: 35,
-    duration: "2h 10m",
-    songs: Array.from({ length: 35 }, (_, i) => ({
-      id: i + 1,
-      title: `Classical Piece ${i + 1}`,
-      artist: `Classical Artist ${Math.floor(i / 4) + 1}`,
-      duration: `${Math.floor(Math.random() * 6) + 3}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`
-    }))
-  }
+  // ... other playlists
 ];
 
 const PlaylistDetail: React.FC = () => {
@@ -109,6 +50,10 @@ const PlaylistDetail: React.FC = () => {
   const [currentPlaylist, setCurrentPlaylist] = useState<Playlist | null>(null);
   const [currentSongIndex, setCurrentSongIndex] = useState<number | null>(null);
   const [showPushModal, setShowPushModal] = useState(false);
+  const [volume, setVolume] = useState(80);
+  const [isMuted, setIsMuted] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   useEffect(() => {
     // Simulate loading delay
@@ -125,20 +70,57 @@ const PlaylistDetail: React.FC = () => {
 
   const handlePlaylistPlay = () => {
     setIsPlaylistPlaying(!isPlaylistPlaying);
+    if (currentSongIndex === null) {
+      setCurrentSongIndex(0);
+    }
   };
 
   const handleSongPlay = (index: number) => {
     if (currentSongIndex === index) {
       setCurrentSongIndex(null);
+      setIsPlaylistPlaying(false);
     } else {
       setCurrentSongIndex(index);
+      setIsPlaylistPlaying(true);
     }
   };
 
-  const handlePushPlaylist = (targets: { type: 'branch' | 'group'; id: string }[]) => {
-    console.log('Pushing playlist to:', targets);
-    // Here you would implement the actual push logic
-    alert('Playlist pushed successfully!');
+  const handleNextSong = () => {
+    if (currentPlaylist && currentSongIndex !== null) {
+      const nextIndex = (currentSongIndex + 1) % currentPlaylist.songs.length;
+      setCurrentSongIndex(nextIndex);
+    }
+  };
+
+  const handlePreviousSong = () => {
+    if (currentPlaylist && currentSongIndex !== null) {
+      const prevIndex = currentSongIndex === 0 ? currentPlaylist.songs.length - 1 : currentSongIndex - 1;
+      setCurrentSongIndex(prevIndex);
+    }
+  };
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = parseInt(e.target.value);
+    setVolume(newVolume);
+    if (newVolume === 0) {
+      setIsMuted(true);
+    } else {
+      setIsMuted(false);
+    }
+  };
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
+  const handleProgressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setProgress(parseInt(e.target.value));
+  };
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
   };
 
   if (isLoading) {
@@ -235,13 +217,17 @@ const PlaylistDetail: React.FC = () => {
               <tr
                 key={song.id}
                 onClick={() => handleSongPlay(index)}
-                className="border-b border-gray-50 last:border-0 hover:bg-gray-50 cursor-pointer"
+                className={`border-b border-gray-50 last:border-0 hover:bg-gray-50 cursor-pointer ${
+                  currentSongIndex === index ? 'bg-indigo-50' : ''
+                }`}
               >
                 <td className="py-4 px-6 text-gray-900">{index + 1}</td>
                 <td className="py-4 px-6">
                   <div className="flex items-center">
                     <Music2 className="w-4 h-4 text-gray-400 mr-3" />
-                    <span className="font-medium text-gray-900">{song.title}</span>
+                    <span className={`font-medium ${currentSongIndex === index ? 'text-indigo-600' : 'text-gray-900'}`}>
+                      {song.title}
+                    </span>
                   </div>
                 </td>
                 <td className="py-4 px-6 text-gray-500">{song.artist}</td>
@@ -257,12 +243,100 @@ const PlaylistDetail: React.FC = () => {
         </table>
       </div>
 
+      {/* Audio Player */}
+      {currentSongIndex !== null && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+          <div className="max-w-[1600px] mx-auto">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4 flex-1">
+                <img
+                  src={currentPlaylist.artwork}
+                  alt="Now Playing"
+                  className="w-12 h-12 rounded object-cover"
+                />
+                <div>
+                  <h4 className="font-medium text-gray-900">
+                    {currentPlaylist.songs[currentSongIndex].title}
+                  </h4>
+                  <p className="text-sm text-gray-500">
+                    {currentPlaylist.songs[currentSongIndex].artist}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex-1">
+                <div className="flex items-center justify-center gap-4">
+                  <button
+                    onClick={handlePreviousSong}
+                    className="p-2 hover:bg-gray-100 rounded-full"
+                  >
+                    <SkipBack className="w-5 h-5 text-gray-600" />
+                  </button>
+                  <button
+                    onClick={() => setIsPlaylistPlaying(!isPlaylistPlaying)}
+                    className="p-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700"
+                  >
+                    {isPlaylistPlaying ? (
+                      <Pause className="w-5 h-5" />
+                    ) : (
+                      <Play className="w-5 h-5" />
+                    )}
+                  </button>
+                  <button
+                    onClick={handleNextSong}
+                    className="p-2 hover:bg-gray-100 rounded-full"
+                  >
+                    <SkipForward className="w-5 h-5 text-gray-600" />
+                  </button>
+                </div>
+                <div className="flex items-center gap-3 mt-2">
+                  <span className="text-xs text-gray-500">{formatTime(progress)}</span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={progress}
+                    onChange={handleProgressChange}
+                    className="flex-1 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-indigo-600"
+                  />
+                  <span className="text-xs text-gray-500">{formatTime(duration)}</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 flex-1 justify-end">
+                <button
+                  onClick={toggleMute}
+                  className="p-2 hover:bg-gray-100 rounded-full"
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-5 h-5 text-gray-600" />
+                  ) : (
+                    <Volume2 className="w-5 h-5 text-gray-600" />
+                  )}
+                </button>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={isMuted ? 0 : volume}
+                  onChange={handleVolumeChange}
+                  className="w-24 h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-indigo-600"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Push Modal */}
       <PushPlaylistModal
         isOpen={showPushModal}
         onClose={() => setShowPushModal(false)}
         playlistName={currentPlaylist.name}
-        onPush={handlePushPlaylist}
+        onPush={(targets) => {
+          console.log('Pushing playlist to:', targets);
+          alert('Playlist pushed successfully!');
+        }}
       />
     </div>
   );

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Plus } from 'lucide-react';
+import Joyride, { Step, CallBackProps, STATUS } from 'react-joyride';
 import AnnouncementUploadModal from './AnnouncementUploadModal';
 import CampaignList from './campaigns/CampaignList';
 import { Campaign } from './types';
@@ -36,6 +37,15 @@ const initialCampaigns: Campaign[] = [
 const AnnouncementManager: React.FC = () => {
   const [campaigns, setCampaigns] = useState<Campaign[]>(initialCampaigns);
   const [showUploadModal, setShowUploadModal] = useState(false);
+  const [runTour, setRunTour] = useState(false);
+
+  useEffect(() => {
+    // Check if this is the first visit
+    const hasSeenTour = localStorage.getItem('announcement-tour-completed');
+    if (!hasSeenTour) {
+      setRunTour(true);
+    }
+  }, []);
 
   const handleUpload = (data: any) => {
     const newCampaign: Campaign = {
@@ -61,18 +71,64 @@ const AnnouncementManager: React.FC = () => {
     setShowUploadModal(false);
   };
 
+  const handleJoyrideCallback = (data: CallBackProps) => {
+    const { status } = data;
+    if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
+      localStorage.setItem('announcement-tour-completed', 'true');
+    }
+  };
+
+  const steps: Step[] = [
+    {
+      target: '.campaign-header',
+      content: 'Welcome to the Announcements Manager! Here you can create and manage your announcement campaigns.',
+      placement: 'center',
+      disableBeacon: true
+    },
+    {
+      target: '.create-campaign-btn',
+      content: 'Click here to create a new announcement campaign. You can upload audio files and schedule them for playback.',
+      placement: 'bottom'
+    },
+    {
+      target: '.campaigns-list',
+      content: 'Here you can see all your announcement campaigns. Each campaign can contain multiple audio files and can be scheduled to play at specific times.',
+      placement: 'top'
+    },
+    {
+      target: '.campaign-actions',
+      content: 'Use these controls to manage your campaigns. You can edit schedules, preview audio files, and delete campaigns.',
+      placement: 'left'
+    }
+  ];
+
   return (
     <div className="space-y-6">
+      <Joyride
+        steps={steps}
+        run={runTour}
+        continuous
+        showProgress
+        showSkipButton
+        styles={{
+          options: {
+            primaryColor: '#4F46E5',
+            zIndex: 1000,
+          },
+        }}
+        callback={handleJoyrideCallback}
+      />
+
       <div className="bg-white rounded-xl shadow-sm border border-gray-100">
         <div className="p-6 border-b border-gray-100">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center campaign-header">
             <div>
               <h2 className="text-xl font-semibold text-gray-900">Campaigns</h2>
               <p className="text-gray-600 mt-1">Manage your announcement campaigns</p>
             </div>
             <button 
               onClick={() => setShowUploadModal(true)}
-              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors create-campaign-btn"
             >
               <Plus className="w-4 h-4 mr-2" />
               Create Campaign
@@ -80,10 +136,12 @@ const AnnouncementManager: React.FC = () => {
           </div>
         </div>
 
-        <CampaignList 
-          campaigns={campaigns}
-          setCampaigns={setCampaigns}
-        />
+        <div className="campaigns-list">
+          <CampaignList 
+            campaigns={campaigns}
+            setCampaigns={setCampaigns}
+          />
+        </div>
       </div>
 
       {showUploadModal && (

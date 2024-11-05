@@ -62,7 +62,7 @@ const CampaignRow: React.FC<CampaignRowProps> = ({
         </span>
       </td>
       <td className="px-6 py-4">
-        <div className="flex items-center justify-end gap-2">
+        <div className="flex items-center justify-end gap-2 campaign-actions">
           <button 
             onClick={(e) => {
               e.stopPropagation();
