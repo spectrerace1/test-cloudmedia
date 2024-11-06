@@ -177,3 +177,404 @@
 {"level":"info","message":"Redis connection established","timestamp":"2024-11-06T09:08:22.207Z"}
 {"level":"info","message":"MinIO connection established","timestamp":"2024-11-06T09:08:22.217Z"}
 {"level":"info","message":"Server is running on port 3000","timestamp":"2024-11-06T09:08:22.219Z"}
+{"level":"info","message":"Device monitoring started","timestamp":"2024-11-06T10:29:08.544Z"}
+{"level":"info","message":"Database connection established","timestamp":"2024-11-06T10:29:08.908Z"}
+{"level":"info","message":"Redis connection established","timestamp":"2024-11-06T10:29:08.913Z"}
+{"level":"info","message":"MinIO connection established","timestamp":"2024-11-06T10:29:08.928Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2024-11-06T10:29:08.930Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:20:08.991Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:20:08.993Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:20:39.009Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:21:09.007Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:21:09.008Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:21:09.014Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:21:39.008Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:21:39.024Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:21:39.027Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:22:09.015Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:22:09.015Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:22:09.016Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:22:39.030Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:22:39.030Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:22:39.032Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:23:09.023Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:23:09.024Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:23:09.044Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:23:39.028Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:23:39.059Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:23:39.061Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:24:09.022Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:24:09.023Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:24:09.033Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:24:39.030Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:24:39.045Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:24:39.047Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:25:09.035Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:25:09.042Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:25:09.042Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:25:39.048Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:25:39.049Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:25:39.051Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:26:09.027Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:26:09.028Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:26:09.055Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:26:39.033Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:26:39.064Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:26:39.066Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:27:09.036Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:27:09.046Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:27:09.046Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:27:25.386Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:27:39.045Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:27:39.047Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:27:39.048Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:28:09.043Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:28:09.043Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:28:09.052Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:28:09.183Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:28:14.173Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:28:16.483Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:28:39.051Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:28:39.067Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:28:39.069Z"}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:28:55.236Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:29:01.041Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:29:09.051Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:29:09.051Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:29:09.052Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:29:39.058Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:29:39.058Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:29:39.061Z"}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:29:40.255Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:29:46.050Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:29:46.690Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:29:48.050Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:29:51.680Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:29:53.070Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:29:58.340Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:30:09.058Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:30:09.059Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:30:09.059Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:30:13.999Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:30:19.009Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:30:25.918Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:30:39.063Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:30:39.064Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:30:39.065Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:31:09.077Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:31:09.077Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:31:09.077Z"}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:31:10.281Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:31:16.047Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:31:39.086Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:31:39.087Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:31:39.088Z"}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:31:55.295Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:32:01.075Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:32:05.315Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:32:09.075Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:32:09.075Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:32:09.099Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:32:10.315Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:32:13.135Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:32:39.089Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:32:39.105Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:32:39.107Z"}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:32:55.319Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:33:01.044Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:33:09.083Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:33:09.083Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:33:09.092Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:33:39.092Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:33:39.092Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:33:39.094Z"}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:33:40.350Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:33:46.042Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:34:09.091Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:34:09.091Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:34:09.091Z"}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:34:25.359Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:34:31.051Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:34:39.107Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:34:39.107Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:34:39.109Z"}
+{"level":"warn","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e is offline. Attempting reconnection...","timestamp":"2024-11-06T11:35:09.099Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:35:09.099Z"}
+{"level":"warn","message":"Cannot send command to offline device: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:35:09.121Z"}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:35:10.387Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:35:16.039Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:35:31.668Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:35:33.918Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:35:36.648Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:35:38.888Z"}
+{"level":"error","message":"Failed to reconnect device eb949a43-0363-4f07-b107-be826e5ce49e after 3 attempts","timestamp":"2024-11-06T11:35:39.134Z"}
+{"level":"error","message":"Device failure notification sent for eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:35:39.136Z"}
+{"ip":"","lastSeen":"2024-11-06T11:35:40.388Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:35:40.390Z","version":""}
+{"level":"info","message":"Device eb949a43-0363-4f07-b107-be826e5ce49e reconnected successfully","timestamp":"2024-11-06T11:35:44.119Z"}
+{"ip":"","lastSeen":"2024-11-06T11:35:55.392Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:35:55.393Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:36:10.393Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:36:10.394Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:36:17.028Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:36:17.407Z"}
+{"ip":"","lastSeen":"2024-11-06T11:36:25.395Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:36:25.396Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:36:40.406Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:36:40.407Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:36:55.421Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:36:55.421Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:37:02.065Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:37:02.415Z"}
+{"level":"error","message":"Health check failed for device eb949a43-0363-4f07-b107-be826e5ce49e: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:37:09.108Z"}
+{"ip":"","lastSeen":"2024-11-06T11:37:10.427Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:37:10.428Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:37:25.433Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:37:25.434Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:37:40.445Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:37:40.445Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:37:46.084Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:37:46.484Z"}
+{"ip":"","lastSeen":"2024-11-06T11:37:55.446Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:37:55.447Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:38:10.451Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:38:10.452Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:38:25.463Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:38:25.463Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:38:32.052Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:38:32.422Z"}
+{"ip":"","lastSeen":"2024-11-06T11:38:40.476Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:38:40.477Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:38:55.481Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:38:55.482Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:39:10.490Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:39:10.490Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:39:17.032Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:39:17.371Z"}
+{"ip":"","lastSeen":"2024-11-06T11:39:25.492Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:39:25.493Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:39:40.495Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:39:40.496Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:39:55.511Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:39:55.511Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:40:02.069Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:40:02.409Z"}
+{"level":"error","message":"Health check failed for device eb949a43-0363-4f07-b107-be826e5ce49e: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:40:09.119Z"}
+{"ip":"","lastSeen":"2024-11-06T11:40:10.515Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:40:10.516Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:40:25.518Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:40:25.519Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:40:40.531Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:40:40.531Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:40:46.207Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:40:46.538Z"}
+{"ip":"","lastSeen":"2024-11-06T11:40:55.542Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:40:55.543Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:41:10.552Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:41:10.553Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:41:25.561Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:41:25.561Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:41:32.076Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:41:32.406Z"}
+{"ip":"","lastSeen":"2024-11-06T11:41:40.569Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:41:40.570Z","version":""}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:41:49.283Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:41:49.935Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:41:54.985Z"}
+{"ip":"","lastSeen":"2024-11-06T11:41:55.579Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:41:55.580Z","version":""}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:42:05.685Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:42:08.749Z"}
+{"level":"error","message":"Health check failed for device e6a61028-39f4-4b33-87dd-fd5db014016d: Cannot read properties of undefined (reading 'cpu')","stack":"TypeError: Cannot read properties of undefined (reading 'cpu')\n    at MonitoringService.storeMetrics (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:104:30)\n    at MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:54:16)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:42:09.146Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:42:09.395Z"}
+{"ip":"","lastSeen":"2024-11-06T11:42:10.585Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:42:10.586Z","version":""}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:42:10.654Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:42:14.434Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:42:17.884Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:42:22.854Z"}
+{"ip":"","lastSeen":"2024-11-06T11:42:25.587Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:42:25.588Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:42:25.587Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:42:25.589Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:42:40.596Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:42:40.597Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:42:40.596Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:42:40.598Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:42:55.605Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:42:55.605Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:42:55.605Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:43:02.073Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:43:02.413Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:43:02.703Z"}
+{"level":"error","message":"Health check failed for device eb949a43-0363-4f07-b107-be826e5ce49e: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:43:09.152Z"}
+{"level":"error","message":"Health check failed for device e6a61028-39f4-4b33-87dd-fd5db014016d: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:43:09.154Z"}
+{"ip":"","lastSeen":"2024-11-06T11:43:10.604Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:43:10.605Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:43:10.604Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:43:10.605Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:43:25.612Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:43:25.613Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:43:25.612Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:43:25.613Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:43:40.616Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:43:40.616Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:43:40.616Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:43:47.041Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:43:47.412Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:43:47.691Z"}
+{"ip":"","lastSeen":"2024-11-06T11:43:55.627Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:43:55.628Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:43:55.627Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:43:55.628Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:44:10.631Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:44:10.632Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:44:10.631Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:44:10.633Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:44:25.637Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:44:25.637Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:44:25.638Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:44:32.060Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:44:32.400Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:44:32.670Z"}
+{"ip":"","lastSeen":"2024-11-06T11:44:40.650Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:44:40.651Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:44:40.650Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:44:40.651Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:44:55.665Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:44:55.666Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:44:55.665Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:44:55.666Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:45:10.681Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:45:10.681Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:45:10.682Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:45:17.048Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:45:17.408Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:45:17.678Z"}
+{"ip":"","lastSeen":"2024-11-06T11:45:25.694Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:45:25.695Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:45:25.694Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:45:25.695Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:45:40.694Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:45:40.695Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:45:40.694Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:45:40.696Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:45:55.708Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:45:55.708Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:45:55.708Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:46:02.067Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:46:02.407Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:46:02.687Z"}
+{"level":"error","message":"Health check failed for device eb949a43-0363-4f07-b107-be826e5ce49e: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:46:09.167Z"}
+{"level":"error","message":"Health check failed for device e6a61028-39f4-4b33-87dd-fd5db014016d: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:46:09.168Z"}
+{"ip":"","lastSeen":"2024-11-06T11:46:10.713Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:46:10.714Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:46:10.713Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:46:10.714Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:46:25.714Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:46:25.715Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:46:25.714Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:46:25.715Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:46:40.715Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:46:40.715Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:46:40.715Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:46:47.055Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:46:47.395Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:46:47.705Z"}
+{"ip":"","lastSeen":"2024-11-06T11:46:55.716Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:46:55.716Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:46:55.716Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:46:55.717Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:47:10.725Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:47:10.726Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:47:10.725Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:47:10.727Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:47:25.728Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:47:25.729Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:47:25.729Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:47:32.064Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:47:32.394Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:47:32.694Z"}
+{"ip":"","lastSeen":"2024-11-06T11:47:40.731Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:47:40.732Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:47:40.731Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:47:40.732Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:47:55.740Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:47:55.741Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:47:55.740Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:47:55.741Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:48:10.753Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:48:10.753Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:48:10.754Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:48:17.062Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:48:17.402Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:48:17.682Z"}
+{"ip":"","lastSeen":"2024-11-06T11:48:25.767Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:48:25.768Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:48:25.767Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:48:25.768Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:48:40.776Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:48:40.777Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:48:40.777Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:48:40.778Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:48:55.791Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:48:55.792Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:48:55.792Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:49:02.071Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:49:02.411Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:49:02.691Z"}
+{"level":"error","message":"Health check failed for device eb949a43-0363-4f07-b107-be826e5ce49e: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:49:09.190Z"}
+{"level":"error","message":"Health check failed for device e6a61028-39f4-4b33-87dd-fd5db014016d: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:49:09.192Z"}
+{"ip":"","lastSeen":"2024-11-06T11:49:11.991Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:49:11.992Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:49:11.991Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:49:11.992Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:49:26.992Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:49:26.993Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:49:26.992Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:49:26.994Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:49:42.003Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:49:42.003Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:49:42.003Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:49:48.226Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:49:48.576Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:49:48.856Z"}
+{"ip":"","lastSeen":"2024-11-06T11:49:57.012Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:49:57.013Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:49:57.012Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:49:57.013Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:50:12.027Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:50:12.028Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:50:12.027Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:50:12.029Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:50:27.041Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:50:27.042Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:50:27.042Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:50:33.244Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:50:33.605Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:50:33.874Z"}
+{"ip":"","lastSeen":"2024-11-06T11:50:42.056Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:50:42.057Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:50:42.056Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:50:42.058Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:50:57.069Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:50:57.070Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:50:57.069Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:50:57.071Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:51:12.075Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:51:12.076Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:51:12.076Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:51:18.233Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:51:18.613Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:51:18.883Z"}
+{"ip":"","lastSeen":"2024-11-06T11:51:27.089Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:51:27.090Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:51:27.089Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:51:27.090Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:51:42.101Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:51:42.102Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:51:42.101Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:51:42.102Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:51:57.109Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:51:57.110Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:51:57.110Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:52:03.262Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:52:03.582Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:52:03.892Z"}
+{"level":"error","message":"Health check failed for device eb949a43-0363-4f07-b107-be826e5ce49e: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:52:10.381Z"}
+{"level":"error","message":"Health check failed for device e6a61028-39f4-4b33-87dd-fd5db014016d: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:52:10.383Z"}
+{"ip":"","lastSeen":"2024-11-06T11:52:12.110Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:52:12.111Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:52:12.110Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:52:12.111Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:52:27.114Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:52:27.115Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:52:27.115Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:52:27.116Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:52:42.120Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:52:42.120Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:52:42.120Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:52:48.251Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:52:48.590Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:52:48.880Z"}
+{"ip":"","lastSeen":"2024-11-06T11:52:57.130Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:52:57.131Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:52:57.130Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:52:57.131Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:53:12.143Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:53:12.144Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:53:12.143Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:53:12.145Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:53:27.154Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:53:27.155Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:53:27.155Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:53:33.249Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:53:33.589Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:53:33.859Z"}
+{"ip":"","lastSeen":"2024-11-06T11:53:42.156Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:53:42.157Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:53:42.156Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:53:42.157Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:53:57.169Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:53:57.170Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:53:57.169Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:53:57.170Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:54:12.182Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:54:12.182Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:54:12.182Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:54:18.217Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:54:18.598Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:54:18.877Z"}
+{"ip":"","lastSeen":"2024-11-06T11:54:27.191Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:54:27.191Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:54:27.191Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:54:27.192Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:54:42.202Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:54:42.203Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:54:42.202Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:54:42.204Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:54:57.212Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:54:57.212Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:54:57.212Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:55:03.246Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:55:03.616Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:55:03.896Z"}
+{"level":"error","message":"Health check failed for device eb949a43-0363-4f07-b107-be826e5ce49e: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:55:10.406Z"}
+{"level":"error","message":"Health check failed for device e6a61028-39f4-4b33-87dd-fd5db014016d: Unexpected token 'o', \"online\" is not valid JSON","stack":"SyntaxError: Unexpected token 'o', \"online\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at MonitoringService.getDeviceStatus (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:59:46)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async MonitoringService.checkDeviceHealth (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:45:20)\n    at async MonitoringService.performHealthChecks (C:\\Users\\pc\\Desktop\\boldnew\\test-cloudmedia\\cloud-media-backend\\src\\services\\monitoring.service.ts:37:9)","timestamp":"2024-11-06T11:55:10.407Z"}
+{"ip":"","lastSeen":"2024-11-06T11:55:12.213Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:55:12.214Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:55:12.213Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:55:12.214Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:55:27.226Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:55:27.227Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:55:27.227Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:55:27.228Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:55:42.236Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:55:42.236Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:55:42.236Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:55:48.234Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:55:48.604Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:55:48.894Z"}
+{"ip":"","lastSeen":"2024-11-06T11:55:57.244Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:55:57.246Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:55:57.244Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:55:57.246Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:56:12.252Z","level":"debug","message":"Device status updated: e6a61028-39f4-4b33-87dd-fd5db014016d","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:56:12.252Z","version":""}
+{"ip":"","lastSeen":"2024-11-06T11:56:12.252Z","level":"debug","message":"Device status updated: eb949a43-0363-4f07-b107-be826e5ce49e","online":true,"systemInfo":{"cpu":0,"memory":{"total":0,"used":0},"os":"","storage":{"total":0,"used":0}},"timestamp":"2024-11-06T11:56:12.253Z","version":""}
+{"level":"info","message":"Device disconnected: undefined","timestamp":"2024-11-06T11:56:27.265Z"}
+{"level":"info","message":"Device disconnected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:56:27.265Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:56:27.265Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:56:29.323Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:56:32.922Z"}
+{"level":"info","message":"Device connected: eb949a43-0363-4f07-b107-be826e5ce49e","timestamp":"2024-11-06T11:56:33.292Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:56:33.583Z"}
+{"level":"info","message":"Device connected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:56:34.402Z"}
+{"level":"info","message":"Device disconnected: e6a61028-39f4-4b33-87dd-fd5db014016d","timestamp":"2024-11-06T11:56:35.141Z"}
+{"level":"info","message":"Device connected: undefined","timestamp":"2024-11-06T11:56:35.782Z"}

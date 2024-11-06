@@ -1,50 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { X, Building2 } from 'lucide-react';
+import { Branch } from '../../types/branch';
+import { useBranch } from '../../hooks/useBranch';
 
 interface AddDeviceProps {
   onClose: () => void;
+  onAdd: (branchId: string, deviceData: { name: string; token: string }) => void;
 }
 
-const AddDevice: React.FC<AddDeviceProps> = ({ onClose }) => {
+const AddDevice: React.FC<AddDeviceProps> = ({ onClose, onAdd }) => {
+  const { branches, loading, error } = useBranch(); // Branch listesini ve yükleme durumunu alın
   const [deviceToken, setDeviceToken] = useState('');
   const [selectedBranch, setSelectedBranch] = useState('');
   const [deviceName, setDeviceName] = useState('');
-  const [error, setError] = useState('');
+  const [formError, setFormError] = useState('');
 
-  // Mock branches data - In real app, this would come from an API
-  const branches = [
-    { id: 1, name: 'Downtown Branch' },
-    { id: 2, name: 'Mall Location' },
-    { id: 3, name: 'Airport Store' }
-  ];
-
-  const handleSubmit = (e: React.FormEvent) => {
+  // Form gönderimi işlemi
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    
-    // Validate token format (6 characters alphanumeric)
+    console.log('Form submitted'); // Gönderim işleminin tetiklendiğini doğrulamak için
+
+    // Form doğrulaması
     if (!/^[A-Z0-9]{6}$/.test(deviceToken)) {
-      setError('Please enter a valid 6-character device token');
+      setFormError('Please enter a valid 6-character device token');
       return;
     }
 
     if (!selectedBranch) {
-      setError('Please select a branch');
+      setFormError('Please select a branch');
       return;
     }
 
     if (!deviceName.trim()) {
-      setError('Please enter a device name');
+      setFormError('Please enter a device name');
       return;
     }
 
-    // Here you would verify the token with your backend
-    // and associate the device with the selected branch
-    console.log('Device Registration:', {
-      token: deviceToken,
-      branchId: selectedBranch,
-      name: deviceName
-    });
-
+    // `onAdd` işlevini çağırarak cihazı ekleme işlemini başlatın
+    onAdd(selectedBranch, { name: deviceName, token: deviceToken });
     onClose();
   };
 
@@ -53,10 +46,7 @@ const AddDevice: React.FC<AddDeviceProps> = ({ onClose }) => {
       <div className="bg-white rounded-xl shadow-xl max-w-lg w-full mx-4">
         <div className="p-6 border-b border-gray-100 flex justify-between items-center">
           <h2 className="text-xl font-semibold text-gray-900">Add New Device</h2>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-500 transition-colors"
-          >
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-500 transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -76,16 +66,12 @@ const AddDevice: React.FC<AddDeviceProps> = ({ onClose }) => {
               maxLength={6}
               required
             />
-            <p className="mt-2 text-sm text-gray-600">
-              Enter the token displayed on your device
-            </p>
+            <p className="mt-2 text-sm text-gray-600">Enter the token displayed on your device</p>
           </div>
 
           {/* Device Name Input */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Device Name
-            </label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Device Name</label>
             <input
               type="text"
               value={deviceName}
@@ -98,31 +84,35 @@ const AddDevice: React.FC<AddDeviceProps> = ({ onClose }) => {
 
           {/* Branch Selection */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Select Branch
-            </label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Select Branch</label>
             <div className="relative">
-              <select
-                value={selectedBranch}
-                onChange={(e) => setSelectedBranch(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 appearance-none"
-                required
-              >
-                <option value="">Select a branch</option>
-                {branches.map((branch) => (
-                  <option key={branch.id} value={branch.id}>
-                    {branch.name}
-                  </option>
-                ))}
-              </select>
+              {loading ? (
+                <p>Loading branches...</p>
+              ) : error ? (
+                <p className="text-red-600">Failed to load branches</p>
+              ) : (
+                <select
+                  value={selectedBranch}
+                  onChange={(e) => setSelectedBranch(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 appearance-none"
+                  required
+                >
+                  <option value="">Select a branch</option>
+                  {branches.map((branch: Branch) => (
+                    <option key={branch.id} value={branch.id}>
+                      {branch.name}
+                    </option>
+                  ))}
+                </select>
+              )}
               <Building2 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
             </div>
           </div>
 
           {/* Error Message */}
-          {error && (
+          {formError && (
             <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-sm text-red-600">{error}</p>
+              <p className="text-sm text-red-600">{formError}</p>
             </div>
           )}
 
@@ -136,23 +126,22 @@ const AddDevice: React.FC<AddDeviceProps> = ({ onClose }) => {
               <li>Click Connect to complete the setup</li>
             </ol>
           </div>
-        </form>
 
-        <div className="p-6 bg-gray-50 rounded-b-xl flex justify-end gap-3">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-lg"
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            form="device-form"
-            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
-          >
-            Connect Device
-          </button>
-        </div>
+          <div className="p-6 bg-gray-50 rounded-b-xl flex justify-end gap-3">
+            <button
+              onClick={onClose}
+              className="px-4 py-2 text-gray-700 hover:bg-gray-200 rounded-lg"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+            >
+              Connect Device
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
