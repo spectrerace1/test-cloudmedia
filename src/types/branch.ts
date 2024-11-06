@@ -14,4 +14,5 @@ export interface Branch {
   devices: Device[];
   createdAt: string;
   updatedAt: string;
+  userId?: string;
 }

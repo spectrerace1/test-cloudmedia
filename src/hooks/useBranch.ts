@@ -40,7 +40,9 @@ export const useBranch = (branchId?: string) => {
     }
   };
 
-  const createBranch = async (branchData: Partial<Branch>) => {
+  // userId'yi branchData'ya dahil edecek şekilde güncellendi
+  const createBranch = async (branchData: Partial<Branch & { userId: string }>) => {
+    console.log("Branch data being sent:", branchData); // branchData içeriğini kontrol edin
     try {
       const newBranch = await branchService.createBranch(branchData);
       setBranches([...branches, newBranch]);
@@ -49,6 +51,7 @@ export const useBranch = (branchId?: string) => {
       throw new Error(error.response?.data?.message || 'Failed to create branch');
     }
   };
+
 
   const updateBranch = async (id: string, branchData: Partial<Branch>) => {
     try {

@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 import { IsEmail, MinLength } from 'class-validator';
+import { Branch } from './Branch'; // Branch entity'sini içe aktarın
 
 @Entity('users')
 export class User {
@@ -22,6 +23,9 @@ export class User {
 
   @Column({ name: 'is_active', default: true })
   isActive: boolean;
+
+  @OneToMany(() => Branch, branch => branch.user)
+  branches: Branch[]; // Kullanıcının sahip olduğu branch'ler
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
