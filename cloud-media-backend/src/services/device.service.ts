@@ -95,14 +95,17 @@ export class DeviceService {
   }
 
   async delete(id: string) {
+    // Öncelikle cihazın varlığını kontrol ediyoruz, eğer bulunmazsa hata döndürülür
     const device = await this.findById(id);
-    device.isActive = false;
-    await deviceRepository.save(device);
-
-    // Remove device status from Redis
+  
+    // Veritabanından tamamen silme işlemi
+    await deviceRepository.remove(device);
+  
+    // Redis'ten cihazla ilgili tüm anahtarları kaldırma
     await redisClient.del(`device:${id}`);
     await redisClient.del(`device:${id}:playback`);
   }
+  
 
   async updateStatus(id: string, status: Partial<Device['status']>) {
     const device = await this.findById(id);

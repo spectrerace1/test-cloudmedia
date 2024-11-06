@@ -288,7 +288,7 @@ const DeviceList: React.FC = () => {
           onSave={handleEditDevice}
         />
       )}
-
+{console.log(selectedDevice)}
       {showDeleteModal && selectedDevice && (
         <DeleteDeviceModal
           device={selectedDevice}
