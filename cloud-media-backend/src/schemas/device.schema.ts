@@ -11,7 +11,7 @@ const statusSchema = z.object({
   lastSeen: z.date().optional(),
   ip: z.string().optional(),
   version: z.string(),
-  systemInfo: systemInfoSchema
+
 });
 
 export const registerDeviceSchema = z.object({
