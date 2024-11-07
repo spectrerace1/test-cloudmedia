@@ -31,10 +31,14 @@ const DeviceList: React.FC = () => {
     }
   };
 
-  const handleEditDevice = async (deviceData: Partial<Device>) => {
+  const handleEditDevice = async (updatedData: Partial<Device>) => {
     if (!selectedDevice) return;
     try {
-      await updateDevice(selectedDevice.id, deviceData);
+      // Sadece name ve branchId gönderiliyor
+      await updateDevice(selectedDevice.id, {
+        name: updatedData.name,
+        branchId: updatedData.branchId,
+      });
       setShowEditModal(false);
       setSelectedDevice(null);
       refresh();
@@ -42,6 +46,7 @@ const DeviceList: React.FC = () => {
       console.error('Failed to update device:', error);
     }
   };
+
 
   const handleDeleteDevice = async () => {
     if (!selectedDevice) return;
@@ -65,12 +70,12 @@ const DeviceList: React.FC = () => {
   };
 
   const filteredDevices = devices.filter(device => {
-    const matchesSearch = 
+    const matchesSearch =
       device.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       device.token.toLowerCase().includes(searchTerm.toLowerCase()) ||
       device.branch.name.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesStatus = statusFilter === 'all' || 
+
+    const matchesStatus = statusFilter === 'all' ||
       (statusFilter === 'online' && device.status.online) ||
       (statusFilter === 'offline' && !device.status.online);
 
@@ -103,7 +108,7 @@ const DeviceList: React.FC = () => {
             <p className="text-gray-600 mt-1">Manage your connected devices and players</p>
           </div>
           <div className="flex gap-3">
-            <button 
+            <button
               onClick={() => window.open('https://example.com/download-player', '_blank')}
               className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
             >
@@ -139,31 +144,28 @@ const DeviceList: React.FC = () => {
           <div className="flex gap-2">
             <button
               onClick={() => setStatusFilter('all')}
-              className={`px-4 py-2 rounded-lg ${
-                statusFilter === 'all'
+              className={`px-4 py-2 rounded-lg ${statusFilter === 'all'
                   ? 'bg-indigo-100 text-indigo-800'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+                }`}
             >
               All
             </button>
             <button
               onClick={() => setStatusFilter('online')}
-              className={`px-4 py-2 rounded-lg ${
-                statusFilter === 'online'
+              className={`px-4 py-2 rounded-lg ${statusFilter === 'online'
                   ? 'bg-green-100 text-green-800'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+                }`}
             >
               Online
             </button>
             <button
               onClick={() => setStatusFilter('offline')}
-              className={`px-4 py-2 rounded-lg ${
-                statusFilter === 'offline'
+              className={`px-4 py-2 rounded-lg ${statusFilter === 'offline'
                   ? 'bg-red-100 text-red-800'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+                }`}
             >
               Offline
             </button>
@@ -221,7 +223,7 @@ const DeviceList: React.FC = () => {
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex items-center justify-end gap-2">
-                    <button 
+                    <button
                       onClick={() => {
                         setSelectedDevice(device);
                         setShowConnectionModal(true);
@@ -230,7 +232,7 @@ const DeviceList: React.FC = () => {
                     >
                       <Link className="w-4 h-4" />
                     </button>
-                    <button 
+                    <button
                       onClick={() => {
                         setSelectedDevice(device);
                         setShowEditModal(true);
@@ -239,7 +241,7 @@ const DeviceList: React.FC = () => {
                     >
                       <Edit className="w-4 h-4" />
                     </button>
-                    <button 
+                    <button
                       onClick={() => {
                         setSelectedDevice(device);
                         setShowDeleteModal(true);
@@ -286,7 +288,7 @@ const DeviceList: React.FC = () => {
           onSave={handleEditDevice}
         />
       )}
-
+{console.log(selectedDevice)}
       {showDeleteModal && selectedDevice && (
         <DeleteDeviceModal
           device={selectedDevice}

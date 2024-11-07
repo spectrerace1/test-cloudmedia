@@ -1,14 +1,31 @@
 import React from 'react';
 import { X, AlertTriangle } from 'lucide-react';
 
+interface DeviceStatus {
+  ip: string;
+  online: boolean;
+  version: string;
+  lastSeen: string;
+  systemInfo: {
+    os: string;
+    memory: number;
+    storage: number;
+  };
+}
+
+interface Branch {
+  id: string;
+  name: string;
+  location: string;
+}
+
 interface Device {
-  id: number;
+  id: string;
   token: string;
   name: string;
-  branch: string;
-  status: 'online' | 'offline';
-  ip: string;
-  lastSeen: string;
+  status: DeviceStatus;
+  branchId: string;
+  branch: Branch;
 }
 
 interface DeleteDeviceModalProps {
@@ -43,7 +60,7 @@ const DeleteDeviceModal: React.FC<DeleteDeviceModalProps> = ({
             <div>
               <p className="text-gray-900 font-medium">Are you sure you want to delete this device?</p>
               <p className="text-gray-600 mt-1">
-                This will permanently remove "{device.name}" from {device.branch}.
+                This will permanently remove "{device.name}" from branch "{device.branch.name}".
                 This action cannot be undone.
               </p>
             </div>
@@ -52,10 +69,11 @@ const DeleteDeviceModal: React.FC<DeleteDeviceModalProps> = ({
           <div className="bg-gray-50 p-4 rounded-lg mt-4">
             <h3 className="font-medium text-gray-900 mb-2">Device Information:</h3>
             <div className="space-y-2 text-sm text-gray-600">
-              <p>Name: {device.name}</p>
-              <p>Token: {device.token}</p>
-              <p>Branch: {device.branch}</p>
-              <p>Status: {device.status}</p>
+              <p><strong>Name:</strong> {device.name}</p>
+              <p><strong>Token:</strong> {device.token}</p>
+              <p><strong>Branch:</strong> {device.branch.name} ({device.branch.location})</p>
+              <p><strong>Status:</strong> {device.status.online ? 'Online' : 'Offline'}</p>
+              <p><strong>Last Seen:</strong> {device.status.lastSeen}</p>
             </div>
           </div>
         </div>

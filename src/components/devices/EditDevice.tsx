@@ -112,7 +112,7 @@ const EditDevice: React.FC<EditDeviceProps> = ({ device, onClose, onSave }) => {
                 required
               >
                 <option value="">Select a branch</option>
-                {branches.map((branch) => (
+                {branches?.map((branch) => (
                   <option key={branch.id} value={branch.id}>
                     {branch.name}
                   </option>
