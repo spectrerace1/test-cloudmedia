@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, ManyToOne, JoinColumn } from 'typeorm';
 import { Device } from './Device';
 import { User } from './User';
+import { BranchGroup } from './BranchGroup';
 
 @Entity('branches')
 export class Branch {
@@ -26,6 +27,13 @@ export class Branch {
   @Column({ name: 'is_active', default: true })
   isActive: boolean;
 
+  @ManyToOne(() => BranchGroup, group => group.branches, { nullable: true, onDelete: 'SET NULL' })
+  @JoinColumn({ name: 'groupId' })
+  group: BranchGroup | null;  // Nullable olarak ayarlandı
+
+  @Column({ type: 'uuid', nullable: true }) // nullable olarak ayarlandı
+  groupId: string | null; // nullable olarak ayarlandı
+
   @OneToMany(() => Device, device => device.branch)
   devices: Device[];
 
@@ -34,7 +42,7 @@ export class Branch {
   user: User;
 
   @Column({ type: 'uuid' })
-  userId: string; // userId'yi ayrı bir sütun olarak tanımlayın
+  userId: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

@@ -18,6 +18,8 @@ import { scheduleRouter } from './routes/schedules';
 import { monitoringRouter } from './routes/monitoring';
 import { handleWebSocket } from './websocket';
 import { errorHandler } from './middleware/errorHandler';
+import { branchGroupRouter } from './routes/branchGroups';
+
 
 const app = express();
 const server = createServer(app);
@@ -43,7 +45,7 @@ app.use('/api/playlists', playlistRouter);
 app.use('/api/media', mediaRouter);
 app.use('/api/schedules', scheduleRouter);
 app.use('/api/monitoring', monitoringRouter);
-
+app.use('/api/branch-groups', branchGroupRouter);
 // Error handling
 app.use(errorHandler);
 

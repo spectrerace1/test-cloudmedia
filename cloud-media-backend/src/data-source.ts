@@ -7,6 +7,7 @@ import { Device } from './entities/Device';
 import { Playlist } from './entities/Playlist';
 import { Media } from './entities/Media';
 import { Schedule } from './entities/Schedule';
+import { BranchGroup } from './entities/BranchGroup'; // Yeni ekleme
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -17,7 +18,7 @@ export const AppDataSource = new DataSource({
   database: config.database.name,
   synchronize: false,
   logging: config.database.logging,
-  entities: [User, Branch, Device, Playlist, Media, Schedule],
+  entities: [User, Branch, Device, Playlist, Media, Schedule, BranchGroup], // BranchGroup eklendi
   migrations: ['src/migrations/*.ts'],
   subscribers: [],
   ssl: false,

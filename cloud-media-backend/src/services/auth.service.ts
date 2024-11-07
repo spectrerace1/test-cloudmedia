@@ -139,7 +139,7 @@ export class AuthService {
     const token = jwt.sign(
       { id: user.id, role: user.role, sessionId },
       config.jwt.secret,
-      { expiresIn: '15m' }
+      { expiresIn: '1d' }
     );
 
     // Yenileme token'ı (7 gün süreli)
