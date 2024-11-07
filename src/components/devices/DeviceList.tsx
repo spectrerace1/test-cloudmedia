@@ -18,8 +18,8 @@ const DeviceList: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'online' | 'offline'>('all');
 
-  // Initialize WebSocket connection for selected device
-  const ws = selectedDevice ? useWebSocket(selectedDevice.id) : null;
+  // WebSocket bağlantısını her zaman başlat, ancak yalnızca `selectedDevice` varsa kullan
+  const ws = useWebSocket(selectedDevice?.id);
 
   const handleAddDevice = async (branchId: string, deviceData: Partial<Device>) => {
     try {
@@ -190,20 +190,20 @@ const DeviceList: React.FC = () => {
                 <td className="px-6 py-4">
                   <div className="flex flex-col">
                     <span className="font-medium text-gray-900">{device.name}</span>
-                    <span className="text-sm text-gray-500">{device.systemInfo?.os || 'Unknown'}</span>
+                    <span className="text-sm text-gray-500">{device?.systemInfo?.os || 'Unknown'}</span>
                   </div>
                 </td>
                 <td className="px-6 py-4">
                   <code className="px-2 py-1 bg-gray-100 rounded text-sm font-mono">
-                    {device.token}
+                    {device?.token}
                   </code>
                 </td>
                 <td className="px-6 py-4">
-                  <span className="text-gray-600">{device.branch.name}</span>
+                  <span className="text-gray-600">{device?.branch?.name}</span>
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-2">
-                    {device.status.online ? (
+                    {device?.status?.online ? (
                       <>
                         <Signal className="w-4 h-4 text-green-600" />
                         <span className="text-green-600">Online</span>
@@ -217,7 +217,7 @@ const DeviceList: React.FC = () => {
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <span className="text-gray-600">{device.status.ip || 'N/A'}</span>
+                  <span className="text-gray-600">{device?.status?.ip || 'N/A'}</span>
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex items-center justify-end gap-2">

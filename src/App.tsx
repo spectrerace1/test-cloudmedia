@@ -8,7 +8,7 @@ import PrivateRoute from './components/auth/PrivateRoute';
 
 const App: React.FC = () => {
   const { user } = useAuth();
-
+console.log(user)
   return (
     <Routes>
       <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />

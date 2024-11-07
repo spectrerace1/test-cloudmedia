@@ -21,7 +21,7 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
-const AuthContext = createContext<AuthContextType>({
+const AuthContext = createContext<AuthContextType>( {
   user: null,
   loading: true,
   error: null,
@@ -45,6 +45,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
       if (token) {
         const userData = await authService.getCurrentUser();
         setUser(userData);
+      } else {
+        // Eğer token yoksa, localStorage'dan kullanıcı bilgilerini kontrol et
+        const userString = localStorage.getItem('user');
+        if (userString) {
+          setUser(JSON.parse(userString)); // Kullanıcı bilgilerini ayarla
+        }
       }
     } catch (error) {
       console.error('Auth check failed:', error);

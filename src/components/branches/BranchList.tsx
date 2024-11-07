@@ -6,8 +6,9 @@ import { Signal, SignalZero, Play, Pause, Volume2, Edit, Trash2 } from 'lucide-r
 import AddBranchModal from './AddBranchModal';
 import EditBranchModal from './EditBranchModal';
 import DeleteConfirmModal from './DeleteConfirmModal';
-
+import { useAuth } from '../../hooks/useAuth';
 const BranchList: React.FC = () => {
+  const { user } = useAuth();
   const { branches, loading, error, createBranch, updateBranch, deleteBranch, refresh } = useBranch();
   const { playlists } = usePlaylist();
   const [showAddModal, setShowAddModal] = useState(false);
@@ -16,15 +17,26 @@ const BranchList: React.FC = () => {
   const [selectedBranch, setSelectedBranch] = useState<Branch | null>(null);
 
   const handleAddBranch = async (branchData: Partial<Branch>) => {
+    console.log("6544654",user)
+    if (!user) {
+      console.error('Kullanıcı oturum açmamış.');
+      return;
+    }
+  
+    console.log("Oturum açmış kullanıcı ID'si:", user.id); // user.id'nin mevcut olduğunu kontrol edin
+  
     try {
-      await createBranch(branchData);
+      // `userId`yi `branchData`'ya ekleyin
+      const completeBranchData = { ...branchData, userId: user.id };
+      console.log("Tam branch data:", completeBranchData); // completeBranchData içeriğini kontrol edin
+      await createBranch(completeBranchData); // `createBranch`'e `userId` ile gönderin
       setShowAddModal(false);
       refresh();
     } catch (error) {
       console.error('Failed to create branch:', error);
     }
   };
-
+  
   const handleEditBranch = async (branchData: Partial<Branch>) => {
     if (!selectedBranch) return;
     try {
@@ -169,6 +181,7 @@ const BranchList: React.FC = () => {
           onClose={() => setShowAddModal(false)}
           onAdd={handleAddBranch}
           playlists={playlists}
+          userId={user?.id}
         />
       )}
 

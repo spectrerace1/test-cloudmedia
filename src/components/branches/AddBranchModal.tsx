@@ -6,9 +6,10 @@ import { branchService } from '../../services/api';
 interface AddBranchModalProps {
   onClose: () => void;
   onAdd: (branch: Branch) => void;
+  userId: string; // userId prop olarak alınıyor
 }
 
-const AddBranchModal: React.FC<AddBranchModalProps> = ({ onClose, onAdd }) => {
+const AddBranchModal: React.FC<AddBranchModalProps> = ({ onClose, onAdd, userId }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
@@ -30,7 +31,8 @@ const AddBranchModal: React.FC<AddBranchModalProps> = ({ onClose, onAdd }) => {
     setError('');
 
     try {
-      const newBranch = await branchService.createBranch(formData);
+      const completeBranchData = { ...formData, userId }; // userId burada branchData ile gönderiliyor
+      const newBranch = await branchService.createBranch(completeBranchData);
       onAdd(newBranch);
       onClose();
     } catch (err: any) {

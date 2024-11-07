@@ -12,10 +12,11 @@ export const branchService = {
     return data;
   },
 
-  async createBranch(branchData: Partial<Branch>) {
+  async createBranch(branchData: Partial<Branch & { userId: string }>) {
+    console.log("Branch data being sent to backend:", branchData);
     const { data } = await api.post<Branch>('/branches', branchData);
     return data;
-  },
+},
 
   async updateBranch(id: string, branchData: Partial<Branch>) {
     const { data } = await api.patch<Branch>(`/branches/${id}`, branchData);

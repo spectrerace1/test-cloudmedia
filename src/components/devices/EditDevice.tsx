@@ -1,33 +1,44 @@
 import React, { useState } from 'react';
 import { X, Building2 } from 'lucide-react';
 
+interface DeviceStatus {
+  ip: string;
+  online: boolean;
+  version: string;
+  lastSeen: string;
+  systemInfo: {
+    os: string;
+    memory: number;
+    storage: number;
+  };
+}
+
+interface Branch {
+  id: string;
+  name: string;
+}
+
 interface Device {
-  id: number;
+  id: string;
   token: string;
   name: string;
-  branch: string;
-  status: 'online' | 'offline';
-  ip: string;
-  lastSeen: string;
+  status: DeviceStatus;
+  branchId: string;
+  branch: Branch;
 }
 
 interface EditDeviceProps {
   device: Device;
   onClose: () => void;
-  onSave: (device: Device) => void;
+  onSave: (updatedDevice: Partial<Device>) => void;
 }
 
 const EditDevice: React.FC<EditDeviceProps> = ({ device, onClose, onSave }) => {
   const [deviceName, setDeviceName] = useState(device.name);
-  const [selectedBranch, setSelectedBranch] = useState(device.branch);
+  const [selectedBranchId, setSelectedBranchId] = useState(device.branch.id);
   const [error, setError] = useState('');
 
-  // Mock branches data - In real app, this would come from an API
-  const branches = [
-    { id: 1, name: 'Downtown Branch' },
-    { id: 2, name: 'Mall Location' },
-    { id: 3, name: 'Airport Store' }
-  ];
+  const branches = device.branch ? [device.branch] : [];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +48,7 @@ const EditDevice: React.FC<EditDeviceProps> = ({ device, onClose, onSave }) => {
       return;
     }
 
-    if (!selectedBranch) {
+    if (!selectedBranchId) {
       setError('Please select a branch');
       return;
     }
@@ -45,7 +56,7 @@ const EditDevice: React.FC<EditDeviceProps> = ({ device, onClose, onSave }) => {
     onSave({
       ...device,
       name: deviceName,
-      branch: selectedBranch
+      branchId: selectedBranchId
     });
   };
 
@@ -95,14 +106,14 @@ const EditDevice: React.FC<EditDeviceProps> = ({ device, onClose, onSave }) => {
             </label>
             <div className="relative">
               <select
-                value={selectedBranch}
-                onChange={(e) => setSelectedBranch(e.target.value)}
+                value={selectedBranchId}
+                onChange={(e) => setSelectedBranchId(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 appearance-none"
                 required
               >
                 <option value="">Select a branch</option>
                 {branches.map((branch) => (
-                  <option key={branch.id} value={branch.name}>
+                  <option key={branch.id} value={branch.id}>
                     {branch.name}
                   </option>
                 ))}
@@ -124,15 +135,13 @@ const EditDevice: React.FC<EditDeviceProps> = ({ device, onClose, onSave }) => {
               <div>
                 <h3 className="font-medium text-gray-900">Device Status</h3>
                 <p className="text-sm text-gray-600 mt-1">
-                  Last seen: {device.lastSeen}
+                  Last seen: {device.status.lastSeen}
                 </p>
               </div>
               <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                device.status === 'online'
-                  ? 'bg-green-100 text-green-800'
-                  : 'bg-red-100 text-red-800'
+                device.status.online ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
               }`}>
-                {device.status === 'online' ? 'Online' : 'Offline'}
+                {device.status.online ? 'Online' : 'Offline'}
               </span>
             </div>
           </div>

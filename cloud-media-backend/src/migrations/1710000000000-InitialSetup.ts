@@ -82,6 +82,11 @@ export class InitialSetup1710000000000 implements MigrationInterface {
                     default: true
                 },
                 {
+                    name: "userId",
+                    type: "uuid",
+                    isNullable: false // Her branch'in bir kullanıcıya ait olmasını zorunlu kılar
+                },
+                {
                     name: "created_at",
                     type: "timestamp",
                     default: "now()"
@@ -278,6 +283,13 @@ export class InitialSetup1710000000000 implements MigrationInterface {
             columnNames: ["branch_id"],
             referencedColumnNames: ["id"],
             referencedTableName: "branches",
+            onDelete: "CASCADE"
+        }));
+
+        await queryRunner.createForeignKey("branches", new TableForeignKey({
+            columnNames: ["userId"],
+            referencedColumnNames: ["id"],
+            referencedTableName: "users",
             onDelete: "CASCADE"
         }));
 

@@ -1,3 +1,4 @@
+// services/branch.service.ts
 import { AppDataSource } from '../data-source';
 import { Branch } from '../entities/Branch';
 import { AppError } from '../middleware/errorHandler';
@@ -5,16 +6,22 @@ import { AppError } from '../middleware/errorHandler';
 const branchRepository = AppDataSource.getRepository(Branch);
 
 export class BranchService {
-  async create(branchData: Partial<Branch>) {
+  async create(branchData: Partial<Branch & { userId: string }>) {
+    console.log("Received branchData:", branchData); // branchData içindeki userId değerini kontrol edin
+  
+    if (!branchData.userId) {
+      throw new AppError(400, 'User ID is required to create a branch');
+    }
+  
     const branch = branchRepository.create(branchData);
     await branchRepository.save(branch);
     return branch;
   }
-
-  async findAll() {
+  
+  async findAll(userId: string) {
     return branchRepository.find({
-      relations: ['devices'],
-      where: { isActive: true }
+      where: { isActive: true, userId }, // Kullanıcının kendi branch'lerini filtreleyin
+      relations: ['devices']
     });
   }
 
@@ -39,9 +46,14 @@ export class BranchService {
 
   async delete(id: string) {
     const branch = await this.findById(id);
-    branch.isActive = false;
-    await branchRepository.save(branch);
+  
+    if (!branch) {
+      throw new AppError(404, 'Branch not found');
+    }
+  
+    await branchRepository.remove(branch); // Branch’i veritabanından kalıcı olarak siler
   }
+  
 
   async updateSettings(id: string, settings: Branch['settings']) {
     const branch = await this.findById(id);
