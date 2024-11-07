@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useBranch } from '../../hooks/useBranch';
 import { usePlaylist } from '../../hooks/usePlaylist';
 import { Branch } from '../../types/branch';
-import { Signal, SignalZero, Play, Pause, Volume2, Edit, Trash2 } from 'lucide-react';
+import { Signal, SignalZero, Play, Volume2, Edit, Trash2 } from 'lucide-react';
 import AddBranchModal from './AddBranchModal';
 import EditBranchModal from './EditBranchModal';
 import DeleteConfirmModal from './DeleteConfirmModal';
+import BranchGroups from './BranchGroups'; // BranchGroups bileşeni
 import { useAuth } from '../../hooks/useAuth';
+
 const BranchList: React.FC = () => {
   const { user } = useAuth();
   const { branches, loading, error, createBranch, updateBranch, deleteBranch, refresh } = useBranch();
@@ -14,29 +16,25 @@ const BranchList: React.FC = () => {
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showGroupModal, setShowGroupModal] = useState(false); // Group modal state
   const [selectedBranch, setSelectedBranch] = useState<Branch | null>(null);
 
   const handleAddBranch = async (branchData: Partial<Branch>) => {
-    console.log("6544654",user)
     if (!user) {
       console.error('Kullanıcı oturum açmamış.');
       return;
     }
-  
-    console.log("Oturum açmış kullanıcı ID'si:", user.id); // user.id'nin mevcut olduğunu kontrol edin
-  
+
     try {
-      // `userId`yi `branchData`'ya ekleyin
       const completeBranchData = { ...branchData, userId: user.id };
-      console.log("Tam branch data:", completeBranchData); // completeBranchData içeriğini kontrol edin
-      await createBranch(completeBranchData); // `createBranch`'e `userId` ile gönderin
+      await createBranch(completeBranchData);
       setShowAddModal(false);
       refresh();
     } catch (error) {
       console.error('Failed to create branch:', error);
     }
   };
-  
+
   const handleEditBranch = async (branchData: Partial<Branch>) => {
     if (!selectedBranch) return;
     try {
@@ -78,6 +76,7 @@ const BranchList: React.FC = () => {
   }
 
   return (
+    <>
     <div className="bg-white rounded-xl shadow-sm border border-gray-100">
       <div className="p-6 border-b border-gray-100">
         <div className="flex justify-between items-center">
@@ -85,12 +84,20 @@ const BranchList: React.FC = () => {
             <h2 className="text-xl font-semibold text-gray-900">Branch List</h2>
             <p className="text-gray-600 mt-1">Manage your branches and their settings</p>
           </div>
-          <button 
-            onClick={() => setShowAddModal(true)}
-            className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-          >
-            Add New Branch
-          </button>
+          <div className="flex gap-3">
+            <button 
+              onClick={() => setShowAddModal(true)}
+              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            >
+              Add New Branch
+            </button>
+            <button
+              onClick={() => setShowGroupModal(!showGroupModal)} // Toggle group modal visibility
+              className="inline-flex items-center px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors"
+            >
+              Group
+            </button>
+          </div>
         </div>
       </div>
       
@@ -207,7 +214,17 @@ const BranchList: React.FC = () => {
           onConfirm={handleDeleteBranch}
         />
       )}
+
+     
     </div>
+    <>
+     {showGroupModal && (
+        <BranchGroups
+          onClose={() => setShowGroupModal(false)} // Group modal için kapatma fonksiyonu
+        />
+      )}
+    </>
+    </>
   );
 };
 

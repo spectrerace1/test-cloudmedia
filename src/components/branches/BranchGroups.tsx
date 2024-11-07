@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FolderPlus, Volume2, Play, Pause, Edit, Trash2 } from 'lucide-react';
 import CreateGroupModal from './CreateGroupModal';
 import EditGroupModal from './EditGroupModal';
 import DeleteConfirmModal from './DeleteConfirmModal';
+import { useBranchGroup } from '../../hooks/useBranchGroup';
 
 interface BranchGroup {
   id: number;
@@ -14,84 +15,40 @@ interface BranchGroup {
   hasAnnouncement: boolean;
 }
 
-const groups: BranchGroup[] = [
-  {
-    id: 1,
-    name: 'City Center Branches',
-    branchCount: 5,
-    playlist: 'Urban Vibes 2024',
-    lastUpdated: '2 hours ago',
-    status: 'playing',
-    hasAnnouncement: true
-  },
-  {
-    id: 2,
-    name: 'Shopping Malls',
-    branchCount: 3,
-    playlist: 'Shopping Atmosphere',
-    lastUpdated: '1 day ago',
-    status: 'playing',
-    hasAnnouncement: false
-  },
-  {
-    id: 3,
-    name: 'Airport Locations',
-    branchCount: 2,
-    playlist: 'Travel Mood',
-    lastUpdated: '3 days ago',
-    status: 'paused',
-    hasAnnouncement: false
-  }
-];
-
 const BranchGroups: React.FC = () => {
-  const [groupList, setGroupList] = useState<BranchGroup[]>(groups);
+  const { groups, loading, error, createGroup, updateGroup, deleteGroup, toggleGroupStatus } = useBranchGroup();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [selectedGroup, setSelectedGroup] = useState<BranchGroup | null>(null);
 
-  const handleCreateGroup = (groupData: any) => {
-    const newGroup = {
-      id: groupList.length + 1,
-      ...groupData,
-      status: 'paused',
-      hasAnnouncement: false,
-      lastUpdated: 'Just now'
-    };
-    setGroupList(prev => [...prev, newGroup]);
+  const handleCreateGroup = async (groupData: any) => {
+    await createGroup(groupData);
     setShowCreateModal(false);
   };
 
-  const handleEditGroup = (groupData: any) => {
-    setGroupList(prev => prev.map(group => 
-      group.id === selectedGroup?.id ? { ...group, ...groupData } : group
-    ));
-    setShowEditModal(false);
-    setSelectedGroup(null);
+  const handleEditGroup = async (groupData: any) => {
+    if (selectedGroup) {
+      await updateGroup(selectedGroup.id, groupData);
+      setShowEditModal(false);
+      setSelectedGroup(null);
+    }
   };
 
-  const handleDeleteGroup = () => {
-    setGroupList(prev => prev.filter(group => group.id !== selectedGroup?.id));
-    setShowDeleteModal(false);
-    setSelectedGroup(null);
+  const handleDeleteGroup = async () => {
+    if (selectedGroup) {
+      await deleteGroup(selectedGroup.id);
+      setShowDeleteModal(false);
+      setSelectedGroup(null);
+    }
   };
 
-  const toggleGroupStatus = (group: BranchGroup) => {
-    setGroupList(prev => prev.map(g => 
-      g.id === group.id 
-        ? { ...g, status: g.status === 'playing' ? 'paused' : 'playing' }
-        : g
-    ));
+  const handleToggleStatus = async (group: BranchGroup) => {
+    await toggleGroupStatus(group.id, group.status === 'playing' ? 'paused' : 'playing');
   };
-
-  const playAnnouncement = (group: BranchGroup) => {
-    // Handle announcement playback
-    console.log('Playing announcement for group:', group.name);
-  };
-
+  {console.log(selectedGroup)}
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 mt-2">
       <div className="p-6 border-b border-gray-100">
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-semibold text-gray-900">Branch Groups</h2>
@@ -117,7 +74,21 @@ const BranchGroups: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {groupList.map((group) => (
+            {loading && (
+              <tr>
+                <td colSpan={5} className="text-center p-6">
+                  Loading...
+                </td>
+              </tr>
+            )}
+            {error && (
+              <tr>
+                <td colSpan={5} className="text-center p-6 text-red-600">
+                  {error}
+                </td>
+              </tr>
+            )}
+            {groups.map((group) => (
               <tr key={group.id} className="border-t border-gray-100 hover:bg-gray-50">
                 <td className="px-6 py-4">
                   <span className="font-medium text-gray-900">{group.name}</span>
@@ -140,7 +111,7 @@ const BranchGroups: React.FC = () => {
                   <div className="flex items-center justify-end gap-2">
                     {group.hasAnnouncement && (
                       <button 
-                        onClick={() => playAnnouncement(group)}
+                        onClick={() => console.log('Play announcement for group:', group.name)}
                         className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-yellow-50 hover:bg-yellow-100 text-yellow-600"
                         title="Play Announcement"
                       >
@@ -148,7 +119,7 @@ const BranchGroups: React.FC = () => {
                       </button>
                     )}
                     <button 
-                      onClick={() => toggleGroupStatus(group)}
+                      onClick={() => handleToggleStatus(group)}
                       className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 hover:bg-gray-100 text-gray-600"
                       title={group.status === 'playing' ? 'Pause Group' : 'Play Group'}
                     >

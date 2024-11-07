@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { X, FolderPlus, Building2, Music2 } from 'lucide-react';
 
-interface BranchGroup {
-  id: number;
+interface Branch {
+  id: string;
   name: string;
-  branchCount: number;
+}
+
+interface BranchGroup {
+  id: string;
+  name: string;
+  description: string;
+  branches: Branch[];
   playlist: string;
-  lastUpdated: string;
-  status: 'playing' | 'paused';
-  hasAnnouncement: boolean;
 }
 
 interface EditGroupModalProps {
@@ -17,24 +20,18 @@ interface EditGroupModalProps {
   onSave: (groupData: any) => void;
 }
 
-const branches = [
-  { id: 1, name: 'Downtown Branch' },
-  { id: 2, name: 'Mall Location' },
-  { id: 3, name: 'Airport Store' }
-];
-
 const playlists = [
-  { id: 1, name: 'Summer Hits 2024' },
-  { id: 2, name: 'Relaxing Jazz' },
-  { id: 3, name: 'Pop Classics' }
+  { id: '1', name: 'Summer Hits 2024' },
+  { id: '2', name: 'Relaxing Jazz' },
+  { id: '3', name: 'Pop Classics' },
 ];
 
 const EditGroupModal: React.FC<EditGroupModalProps> = ({ group, onClose, onSave }) => {
   const [formData, setFormData] = useState({
     name: group.name,
-    description: '',
-    branches: [],
-    playlist: group.playlist
+    description: group.description || '',
+    branches: group.branches.map(branch => branch.id),
+    playlist: group.playlist || '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -42,12 +39,12 @@ const EditGroupModal: React.FC<EditGroupModalProps> = ({ group, onClose, onSave 
     onSave(formData);
   };
 
-  const toggleBranch = (branchId: number) => {
+  const toggleBranch = (branchId: string) => {
     setFormData(prev => ({
       ...prev,
       branches: prev.branches.includes(branchId)
         ? prev.branches.filter(id => id !== branchId)
-        : [...prev.branches, branchId]
+        : [...prev.branches, branchId],
     }));
   };
 
@@ -59,10 +56,7 @@ const EditGroupModal: React.FC<EditGroupModalProps> = ({ group, onClose, onSave 
             <h2 className="text-xl font-semibold text-gray-900">Edit Group</h2>
             <p className="text-sm text-gray-600 mt-1">Update group settings and members</p>
           </div>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-500 transition-colors"
-          >
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-500 transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -106,7 +100,7 @@ const EditGroupModal: React.FC<EditGroupModalProps> = ({ group, onClose, onSave 
                 Select Branches
               </label>
               <div className="space-y-2 max-h-48 overflow-y-auto">
-                {branches.map((branch) => (
+                {group.branches.map((branch) => (
                   <label
                     key={branch.id}
                     className="flex items-center p-3 rounded-lg border border-gray-200 hover:bg-gray-50 cursor-pointer"

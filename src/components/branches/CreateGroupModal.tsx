@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, FolderPlus, Building2, Music2 } from 'lucide-react';
+import { useBranch } from '../../hooks/useBranch'; // useBranch hook'unu içe aktarıyoruz
 
 interface CreateGroupModalProps {
   onClose: () => void;
@@ -13,12 +14,6 @@ interface GroupData {
   defaultPlaylist?: string;
 }
 
-const branches = [
-  { id: 1, name: 'Downtown Branch' },
-  { id: 2, name: 'Mall Location' },
-  { id: 3, name: 'Airport Store' }
-];
-
 const playlists = [
   { id: 1, name: 'Summer Hits 2024' },
   { id: 2, name: 'Relaxing Jazz' },
@@ -26,6 +21,7 @@ const playlists = [
 ];
 
 const CreateGroupModal: React.FC<CreateGroupModalProps> = ({ onClose, onAdd }) => {
+  const { branches, loading, error } = useBranch(); // Branch'leri çekiyoruz
   const [formData, setFormData] = useState<GroupData>({
     name: '',
     description: '',
@@ -102,6 +98,8 @@ const CreateGroupModal: React.FC<CreateGroupModalProps> = ({ onClose, onAdd }) =
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Select Branches
               </label>
+              {loading && <p className="text-gray-500">Loading branches...</p>}
+              {error && <p className="text-red-500">Failed to load branches</p>}
               <div className="space-y-2 max-h-48 overflow-y-auto">
                 {branches.map((branch) => (
                   <label
